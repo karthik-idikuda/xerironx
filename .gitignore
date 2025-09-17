@@ -13,3 +13,10 @@ out
 # misc
 *.log
 *.DS_Store
+
+# firebase generated / experimental
+.firebase
+dataconnect/
+src/dataconnect-generated/
+functions/
+studio1/
