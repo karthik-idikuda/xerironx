@@ -43,10 +43,7 @@ const authOptions: NextAuthOptions = {
     },
     async signIn({ user, account, profile }) {
       // Allow all Google sign-ins
-      if (account?.provider === 'google') {
-        return true
-      }
-      return false
+      return true
     },
     async redirect({ url, baseUrl }) {
       // Allows relative callback URLs
@@ -56,7 +53,7 @@ const authOptions: NextAuthOptions = {
       return baseUrl
     }
   },
-  debug: process.env.NODE_ENV === 'development',
+  debug: true, // Enable debug for now
 }
 
 const handler = NextAuth(authOptions)
