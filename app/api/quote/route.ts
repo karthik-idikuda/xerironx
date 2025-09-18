@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
   const headers = {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${apiKey}`,
-    'HTTP-Referer': 'https://xerironx.local',
+    'HTTP-Referer': (process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXTAUTH_URL || 'https://xerironx.vercel.app').replace(/\/$/, ''),
     'X-Title': 'Xerironx'
   }
 
