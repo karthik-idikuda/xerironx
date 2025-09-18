@@ -15,22 +15,27 @@ const authOptions: NextAuthOptions = {
           response_type: 'code'
         }
       }
-    }),
-    AppleProvider({
-      clientId: process.env.APPLE_CLIENT_ID || '',
-      clientSecret: process.env.APPLE_CLIENT_SECRET || '',
-    }),
-    EmailProvider({
-      server: {
-        host: process.env.EMAIL_SERVER_HOST || '',
-        port: Number(process.env.EMAIL_SERVER_PORT) || 587,
-        auth: {
-          user: process.env.EMAIL_SERVER_USER || '',
-          pass: process.env.EMAIL_SERVER_PASSWORD || '',
-        },
-      },
-      from: process.env.EMAIL_FROM || '',
     })
+    // Apple and Email providers temporarily disabled until properly configured
+    // ...(process.env.APPLE_CLIENT_ID && process.env.APPLE_CLIENT_SECRET ? [
+    //   AppleProvider({
+    //     clientId: process.env.APPLE_CLIENT_ID,
+    //     clientSecret: process.env.APPLE_CLIENT_SECRET,
+    //   })
+    // ] : []),
+    // ...(process.env.EMAIL_SERVER_HOST && process.env.EMAIL_SERVER_USER ? [
+    //   EmailProvider({
+    //     server: {
+    //       host: process.env.EMAIL_SERVER_HOST,
+    //       port: Number(process.env.EMAIL_SERVER_PORT) || 587,
+    //       auth: {
+    //         user: process.env.EMAIL_SERVER_USER,
+    //         pass: process.env.EMAIL_SERVER_PASSWORD || '',
+    //       },
+    //     },
+    //     from: process.env.EMAIL_FROM || '',
+    //   })
+    // ] : [])
   ],
   session: { 
     strategy: 'jwt',

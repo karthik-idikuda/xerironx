@@ -39,40 +39,6 @@ export default function RegisterPage() {
     }
   }
 
-  const handleAppleSignUp = async () => {
-    if (!signIn) return
-    setIsLoading(true)
-    try {
-      if (name.trim()) {
-        localStorage.setItem('xerironx.userName', name.trim())
-      }
-      const result = await signIn('apple', { callbackUrl: '/' })
-      console.log('Apple sign-up result:', result)
-    } catch (error) {
-      console.error('Apple sign-up error:', error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
-  const handleEmailSignUp = async () => {
-    if (!signIn) return
-    const email = prompt('Enter your email address:')
-    if (!email) return
-    setIsLoading(true)
-    try {
-      if (name.trim()) {
-        localStorage.setItem('xerironx.userName', name.trim())
-      }
-      const result = await signIn('email', { email, callbackUrl: '/' })
-      console.log('Email sign-up result:', result)
-    } catch (error) {
-      console.error('Email sign-up error:', error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-[var(--bg)] p-4">
       <motion.div initial={{opacity:0, y:8}} animate={{opacity:1, y:0}} transition={{duration:0.4}} className="w-full max-w-md bg-white rounded-2xl border border-gray-200 p-8 shadow-xl">
@@ -113,6 +79,8 @@ export default function RegisterPage() {
             {isLoading ? 'Creating account...' : 'Continue with Google'}
           </button>
 
+          {/* Apple and Email temporarily disabled until properly configured */}
+          {/*
           <button
             className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-black text-white hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-3 font-medium transition-colors"
             onClick={handleAppleSignUp}
@@ -142,6 +110,7 @@ export default function RegisterPage() {
             )}
             Continue with Email
           </button>
+          */}
           
           {!signIn && (
             <p className="text-sm text-red-600 text-center">

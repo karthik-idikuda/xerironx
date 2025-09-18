@@ -28,33 +28,6 @@ export default function LoginPage() {
     }
   }
 
-  const handleAppleSignIn = async () => {
-    if (!signIn) return
-    setIsLoading(true)
-    try {
-      const result = await signIn('apple', { callbackUrl: '/' })
-      console.log('Apple sign-in result:', result)
-    } catch (error) {
-      console.error('Apple sign-in error:', error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
-  const handleEmailSignIn = async () => {
-    if (!signIn) return
-    const email = prompt('Enter your email address:')
-    if (!email) return
-    setIsLoading(true)
-    try {
-      const result = await signIn('email', { email, callbackUrl: '/' })
-      console.log('Email sign-in result:', result)
-    } catch (error) {
-      console.error('Email sign-in error:', error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
   return (
     <div className="min-h-screen flex items-center justify-center bg-[var(--bg)] p-4">
       <motion.div initial={{opacity:0, y:8}} animate={{opacity:1, y:0}} transition={{duration:0.4}} className="w-full max-w-md bg-white rounded-2xl border border-gray-200 p-8 shadow-xl">
@@ -83,6 +56,8 @@ export default function LoginPage() {
             {isLoading ? 'Signing in...' : 'Continue with Google'}
           </button>
 
+          {/* Apple and Email temporarily disabled until properly configured */}
+          {/*
           <button
             className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-black text-white hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-3 font-medium transition-colors"
             onClick={handleAppleSignIn}
@@ -112,6 +87,7 @@ export default function LoginPage() {
             )}
             Continue with Email
           </button>
+          */}
           
           {!signIn && (
             <p className="text-sm text-red-600 text-center">
