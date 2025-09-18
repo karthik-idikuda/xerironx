@@ -3,8 +3,6 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '../auth/[...nextauth]/route'
 import { getProfile, upsertProfile } from '@/lib/profileStore'
 
-export const runtime = 'edge'
-
 export async function GET() {
   const session: any = await getServerSession(authOptions as any)
   if (!session?.user?.email) {
