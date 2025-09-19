@@ -35,6 +35,7 @@ export function TopBar({
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { data: session } = useSession();
   const user = session?.user
+  const savedName = typeof window !== 'undefined' ? (localStorage.getItem('userDisplayName') || undefined) : undefined
 
   const toggleSidebar = () => setSidebarOpen && setSidebarOpen(!sidebarOpen);
 
@@ -132,7 +133,7 @@ export function TopBar({
               <AvatarFallback className="bg-gray-800 text-white text-xs">{(user?.name || 'You').slice(0,2)}</AvatarFallback>
             </Avatar>
             <div className="hidden sm:flex flex-col leading-tight text-left">
-              <span className="text-sm font-semibold text-gray-900">{user?.name || 'Guest'}</span>
+              <span className="text-sm font-semibold text-gray-900">{savedName || user?.name || 'Guest'}</span>
               <span className="text-xs text-gray-500">{user?.email || 'Not signed in'}</span>
             </div>
           </button>
@@ -144,7 +145,7 @@ export function TopBar({
                   <AvatarFallback className="bg-gray-800 text-white text-xs">{(user?.name || 'You').slice(0,2)}</AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col">
-                  <span className="text-sm font-semibold text-gray-900">{user?.name || 'Guest'}</span>
+                  <span className="text-sm font-semibold text-gray-900">{savedName || user?.name || 'Guest'}</span>
                   <span className="text-xs text-gray-500">{user?.email || 'Not signed in'}</span>
                 </div>
               </div>
@@ -161,7 +162,7 @@ export function TopBar({
                 {user ? (
                   <Button onClick={() => signOut({ callbackUrl: '/' })} variant="ghost" className="justify-start w-full text-red-600 hover:bg-red-50">Sign out</Button>
                 ) : (
-                  <Button onClick={() => signIn('google')} variant="ghost" className="justify-start w-full text-gray-700 hover:bg-gray-100">Sign in with Google</Button>
+                  <Button onClick={() => signIn('google', { callbackUrl: '/' })} variant="ghost" className="justify-start w-full text-gray-700 hover:bg-gray-100">Sign in with Google</Button>
                 )}
               </div>
             </div>

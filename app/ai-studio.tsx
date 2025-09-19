@@ -46,6 +46,41 @@ export default function AIStudioPage() {
   const [canvasExpanded, setCanvasExpanded] = useState(false)
   const [canvasContent, setCanvasContent] = useState<React.ReactNode | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  // Load persisted profile preferences (model, image model, framework) once
+  useEffect(() => {
+    let cancelled = false
+    async function loadPrefs() {
+      try {
+        // Try API first (ensures server canonical data), fallback to localStorage
+        const res = await fetch('/api/profile', { cache: 'no-store' })
+        if (res.ok) {
+          const data: any = await res.json()
+          if (cancelled) return
+          if (data.preferredModel && typeof data.preferredModel === 'string') setSelectedModel(prev => prev === DEFAULT_MODEL ? data.preferredModel : prev)
+          if (data.preferredImageModel && typeof data.preferredImageModel === 'string') setSelectedImageModel(prev => prev === DEFAULT_IMAGE_MODEL ? data.preferredImageModel : prev)
+          if (data.preferredFramework && typeof data.preferredFramework === 'string') setFramework(data.preferredFramework as FrameworkKey)
+          if (data.theme && typeof data.theme === 'string') {
+            document.documentElement.dataset.theme = data.theme
+          }
+          return
+        }
+      } catch {}
+      try {
+        const raw = localStorage.getItem('xer_profile')
+        if (!raw) return
+        const data = JSON.parse(raw)
+        if (cancelled) return
+        if (data.preferredModel && typeof data.preferredModel === 'string') setSelectedModel(prev => prev === DEFAULT_MODEL ? data.preferredModel : prev)
+        if (data.preferredImageModel && typeof data.preferredImageModel === 'string') setSelectedImageModel(prev => prev === DEFAULT_IMAGE_MODEL ? data.preferredImageModel : prev)
+        if (data.preferredFramework && typeof data.preferredFramework === 'string') setFramework(data.preferredFramework as FrameworkKey)
+        if (data.theme && typeof data.theme === 'string') {
+          document.documentElement.dataset.theme = data.theme
+        }
+      } catch {}
+    }
+    loadPrefs()
+    return () => { cancelled = true }
+  }, [])
   
   // Sample code for CodeStudio demo
   const [codeFiles, setCodeFiles] = useState<Record<string, { code: string }>>({

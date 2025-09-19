@@ -1,5 +1,5 @@
 {
-  "name": "vibecoder",
+  "name": "xerironx-studio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -28,6 +28,7 @@
     "react-textarea-autosize": "^8.5.9",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
+    "vercel": "^48.0.3",
     "zod": "3.23.8"
   },
   "devDependencies": {

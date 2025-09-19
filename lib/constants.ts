@@ -38,7 +38,7 @@ export const FALLBACK_MODELS: string[] = [
   MODELS[0]
 ]
 
-export const SITE_NAME = 'Xerironx'
+export const SITE_NAME = 'Xerironx Studio'
 
 // Mode-specific model groupings
 export const TEXT_MODELS = MODELS
