@@ -195,7 +195,7 @@ export default function TermsPage() {
           <div className="space-y-8">
             <Section title="1. Acceptance of Terms" icon={FileText}>
               <p>
-                By accessing and using Xerironx Studio ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                By accessing and using Xerironx Studio (&quot;the Service&quot;), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
               </p>
               <p>
                 These Terms of Service constitute a binding agreement between you and Xerironx Studio. Your use of the Service indicates your acceptance of these terms.
@@ -240,7 +240,7 @@ export default function TermsPage() {
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Creating harmful, offensive, or illegal content</li>
                 <li>Attempting to gain unauthorized access to systems</li>
-                <li>Interfering with other users' experience</li>
+                <li>Interfering with other users&apos; experience</li>
                 <li>Violating intellectual property rights</li>
                 <li>Using the Service for commercial purposes without authorization</li>
                 <li>Sharing account credentials with others</li>

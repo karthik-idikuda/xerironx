@@ -271,6 +271,20 @@ h1 {
     } catch {}
   }, [imageGallery])
 
+  // Load saved Vercel token if any
+  useEffect(() => {
+    try {
+      const t = localStorage.getItem('aiStudio.vercelToken')
+      if (t) setVercelToken(t)
+    } catch {}
+  }, [])
+
+  useEffect(() => {
+    try {
+      if (vercelToken) localStorage.setItem('aiStudio.vercelToken', vercelToken)
+    } catch {}
+  }, [vercelToken])
+
   const setAspect = (ratio: '16:9' | '1:1' | '9:16' | '4:3') => {
     switch (ratio) {
       case '1:1':
@@ -333,19 +347,6 @@ h1 {
       }
     })
 
-    // Load saved Vercel token if any
-    useEffect(() => {
-      try {
-        const t = localStorage.getItem('aiStudio.vercelToken')
-        if (t) setVercelToken(t)
-      } catch {}
-    }, [])
-
-    useEffect(() => {
-      try {
-        if (vercelToken) localStorage.setItem('aiStudio.vercelToken', vercelToken)
-      } catch {}
-    }, [vercelToken])
     return out
   }
 

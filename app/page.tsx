@@ -804,7 +804,7 @@ export default function HomePage() {
                 model: "Llama 4 Maverick",
                 capability: "Complex problem solving",
                 demo: "Solve mathematical proof...",
-                response: "To prove this theorem, we'll use mathematical induction. First, let's establish the base case...",
+                response: "To prove this theorem, we&apos;ll use mathematical induction. First, let&apos;s establish the base case...",
                 icon: Brain,
                 color: "accent",
                 metrics: { speed: "2.1s", reasoning: "Advanced", logic: "98%" }
@@ -1023,7 +1023,7 @@ export default function HomePage() {
                 >
                   <div className="absolute -top-4 left-8">
                     <div className="w-8 h-8 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white font-bold text-lg">"</span>
+                      <span className="text-white font-bold text-lg">&quot;</span>
                     </div>
                   </div>
                   <blockquote className="mb-6 mt-4">
@@ -1350,7 +1350,7 @@ export default function HomePage() {
                   <h3 className="text-xl font-bold mb-3">Every Coffee Counts! ☕</h3>
                   <p className="text-text/80 leading-relaxed mb-6 max-w-3xl mx-auto">
                     Join our mission to democratize AI creativity! Your support helps keep Xerironx Studio 
-                    running and accessible to creators worldwide. Together, we're building the 
+                    running and accessible to creators worldwide. Together, we&apos;re building the 
                     <span className="font-semibold text-primary"> most comprehensive free AI studio</span> with cutting-edge models 
                     that inspire creators everywhere. Every coffee makes a difference! 🚀
                   </p>
@@ -1445,7 +1445,7 @@ export default function HomePage() {
                     Contact Developer
                   </h3>
                   <p className="text-text/80 text-lg font-medium">
-                    Let's build something amazing together! Get in touch for collaborations, feedback, or just to say hello.
+                    Let&apos;s build something amazing together! Get in touch for collaborations, feedback, or just to say hello.
                   </p>
                 </div>
               </div>

@@ -205,7 +205,7 @@ export default function PrivacyPage() {
                 <li>Content you create within the platform</li>
               </ul>
 
-              <h4 className="font-semibold text-foreground mt-6 mb-3">What We Don't Collect:</h4>
+              <h4 className="font-semibold text-foreground mt-6 mb-3">What We Don&apos;t Collect:</h4>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Personal browsing data</li>
                 <li>Detailed analytics or tracking</li>
@@ -299,7 +299,7 @@ export default function PrivacyPage() {
               </ul>
 
               <p className="mt-4">
-                For any privacy concerns or requests, contact me directly at idikudakarthik55@gmail.com. I'll respond promptly to help you.
+                For any privacy concerns or requests, contact me directly at idikudakarthik55@gmail.com. I&apos;ll respond promptly to help you.
               </p>
             </Section>
 
@@ -316,7 +316,7 @@ export default function PrivacyPage() {
               </ul>
 
               <p className="mt-4">
-                We don't use tracking cookies, analytics cookies, or advertising cookies. Everything is focused on making your creative experience smooth and secure.
+                We don&apos;t use tracking cookies, analytics cookies, or advertising cookies. Everything is focused on making your creative experience smooth and secure.
               </p>
             </Section>
 
@@ -355,7 +355,7 @@ export default function PrivacyPage() {
 
             <Section title="10. Age Requirements" icon={Users}>
               <p>
-                Xerironx Studio is designed for users 13 years and older. If you're under 13, please ask a parent or guardian to create an account.
+                Xerironx Studio is designed for users 13 years and older. If you&apos;re under 13, please ask a parent or guardian to create an account.
               </p>
               
               <p>
@@ -369,13 +369,13 @@ export default function PrivacyPage() {
               </p>
               
               <p>
-                Any significant changes will be communicated through the platform or via email. Your continued use means you're okay with the updates.
+                Any significant changes will be communicated through the platform or via email. Your continued use means you&apos;re okay with the updates.
               </p>
             </Section>
 
             <Section title="12. Contact Me" icon={Users}>
               <p>
-                Have questions about privacy or how your data is handled? I'm here to help:
+                Have questions about privacy or how your data is handled? I&apos;m here to help:
               </p>
               
               <ul className="list-disc list-inside space-y-2 ml-4">
@@ -385,7 +385,7 @@ export default function PrivacyPage() {
               </ul>
 
               <p className="mt-4">
-                I'll get back to you as soon as possible with clear answers about your privacy and data.
+                I&apos;ll get back to you as soon as possible with clear answers about your privacy and data.
               </p>
             </Section>
           </div>
