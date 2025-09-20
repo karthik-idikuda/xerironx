@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +6,18 @@
 
 @layer base {
   :root {
+    /* Xerironx Solid Color Palette */
+    --color-background: #0B1221;
+    --color-surface: #0E1627;
+    --color-text: #EAF0FF;
+    --color-border: #1F2A44;
+    --color-input: #121B2F;
+    --color-primary: #6366F1; /* Indigo 500 */
+    --color-secondary: #06B6D4; /* Cyan 500 */
+    --color-accent: #F43F5E; /* Rose 500 */
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
     /* Professional White Theme Color Palette */
     --bg-primary: #ffffff;
     --bg-secondary: #fafafa;
@@ -150,8 +162,8 @@
     border-color: hsl(var(--border));
   }
   body {
-    background: var(--bg);
-    color: var(--text-primary);
+    background: var(--color-background);
+    color: var(--color-text);
     font-feature-settings: "rlig" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -161,10 +173,9 @@
 @layer base {
   h1, h2, h3, .font-display {
     font-family: var(--font-display), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
-  h1 { color: var(--text-primary); }
-  h2, h3 { color: var(--text-secondary); }
+  h1, h2, h3 { color: var(--color-text); }
 }
 
 html, body, #__next {
@@ -946,4 +957,90 @@ html, body, #__next {
   animation-delay: var(--delay);
   animation-fill-mode: forwards;
   position: relative;
+}
+
+/* Advanced Gradient Animations */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Glow Effect */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Enhanced Glass Morphism */
+.glass-enhanced {
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-surface {
+  -webkit-backdrop-filter: blur(16px) saturate(200%);
+  backdrop-filter: blur(16px) saturate(200%);
+  background: rgba(14, 22, 39, 0.8);
+  border: 1px solid rgba(31, 42, 68, 0.5);
+}
+
+/* Grid and Radial Gradient Utilities */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Hero Grid Patterns */
+.hero-grid-primary {
+  background-image: 
+    linear-gradient(#6366f1 1px, transparent 1px),
+    linear-gradient(90deg, #6366f1 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.15;
+}
+
+.hero-grid-secondary {
+  background-image: 
+    linear-gradient(#f43f5e 1px, transparent 1px),
+    linear-gradient(90deg, #f43f5e 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.08;
+}
+
+.hero-grid-dots {
+  background-image: 
+    radial-gradient(circle at 0 0, #6366f1 2px, transparent 2px),
+    radial-gradient(circle at 50% 50%, #f43f5e 1px, transparent 1px);
+  background-size: 60px 60px, 30px 30px;
+  background-position: 0 0, 15px 15px;
+  opacity: 0.2;
 }

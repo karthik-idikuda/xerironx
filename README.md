@@ -30,3 +30,4 @@ Routes:
 - `/register` optional display name + Google sign-in
 - `/profile` user profile
 - `/studio` AI studio
+same do for login page also and craete terms & conditions page and pravicy and policy 

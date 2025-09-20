@@ -208,6 +208,30 @@
 				"$tsc"
 			],
 			"group": "build"
+		},
+		{
+			"label": "Typecheck (one-off)",
+			"type": "shell",
+			"command": "npx -y tsc -p tsconfig.json --noEmit",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Typecheck",
+			"type": "shell",
+			"command": "npx -y tsc -p tsconfig.json --noEmit",
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "Typecheck",
+			"type": "shell",
+			"command": "npx -y tsc -p tsconfig.json --noEmit",
+			"isBackground": false,
+			"group": "build"
 		}
 	]
 }
